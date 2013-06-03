@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WPPA+ Extra Feed
- * Plugin URI: http://www.staniscia.net/wppa+
+ * Plugin URI: http://www.staniscia.net/wppa-extra-feed/
  * Description: Enable RSS  for topten foto
  * Version: 0.0.1
  * Author: Alessandro Staniscia
