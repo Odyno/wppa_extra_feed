@@ -36,7 +36,7 @@ function wppaef_do_add_feeds_to_site(){
        $max=10;
     }
 
-    if (isset ($_GET['album-id']) ){
+    if (isset ($_GET['album-id']) && !empty($_GET['album-id'])){
         $albumsId = explode(",",$_GET['album-id']);
         $albumValidId=array();
         foreach($albumsId as $idAlbum){
@@ -48,6 +48,8 @@ function wppaef_do_add_feeds_to_site(){
            $album = null;
         }
     }
+
+
 
     $formatter=new Wppaef_Feed_Formatter(FEED_NAME_OF_WPPA);
 
@@ -118,24 +120,24 @@ function wppaef_get_all_last_photo($max = 10, $album = null){
                         $feed->img_url_taget = $link['target'];
                         $feed->img_title = esc_attr(stripslashes($link['title']));
                         $feed->img_src = $imgurl;
-                        $feed->img_width = $width;
-                        $feed->img_height = $height;
+                        $feed->prefered_width = $width;
+                        $feed->prefered_height = $height;
                         $feed->img_alternative_text = esc_attr(wppa_qtrans($image['name']));
                     } elseif ($link['is_lightbox']) {
                         $feed->img_url = $link['url'];
                         $feed->img_url_taget = $link['target'];
                         $feed->img_title = wppa_get_lbtitle('thumb', $image['id']);
                         $feed->img_src = $imgurl;
-                        $feed->img_width = $width;
-                        $feed->img_height = $height;
+                        $feed->prefered_width = $width;
+                        $feed->prefered_height = $height;
                         $feed->img_alternative_text = esc_attr(wppa_qtrans($image['name']));
                     } else { // Is an onclick unit
                         $feed->img_url = "";
                         $feed->img_url_taget = "";
                         $feed->img_title = esc_attr(stripslashes($link['title']));
                         $feed->img_src = $imgurl;
-                        $feed->img_width = $width;
-                        $feed->img_height = $height;
+                        $feed->prefered_width = $width;
+                        $feed->prefered_height = $height;
                         $feed->img_alternative_text = esc_attr(wppa_qtrans($image['name']));
                     }
                 } else {
@@ -143,8 +145,8 @@ function wppaef_get_all_last_photo($max = 10, $album = null){
                     $feed->img_url_taget = "";
                     $feed->img_title = "";
                     $feed->img_src = $imgurl;
-                    $feed->img_width = $width;
-                    $feed->img_height = $height;
+                    $feed->prefered_width = $width;
+                    $feed->prefered_height = $height;
                     $feed->img_alternative_text = esc_attr(wppa_qtrans($image['name']));
                 }
                // $feed['rating_html'] = wppa_get_rating_by_id($image['id']);

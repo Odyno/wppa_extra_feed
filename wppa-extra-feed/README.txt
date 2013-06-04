@@ -8,7 +8,29 @@ Stable tag: 0.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin add the rss feeds feature at plugin WP Photo Album Plus.
+This plugin add the extra RSS feeds feature at plugin WP Photo Album Plus.
+
+== Description ==
+This plugin add the extra RSS feeds feature at plugin [WP Photo Album Plus](http://wordpress.org/plugins/wp-photo-album-plus/ "WP Photo Album Plus").
+
+The default activity of this plugin is add a new RSS feed at link www.your-wp-site.lan/?feed=last_photo with the last 10 photos of all albums of WP Photo Album Plus.
+But you can add the a new feed on your forum or on your page with this shortcode:
+
+`[wppaef]`
+
+You can control the link and you can add these attributes on shortcode
+
+* `max-num` Max number of feed(default is 10)
+* `icon_url` Url to custom icon
+* `text_url` Text to show as url of feed
+* `album_id` Filter for album id (you can add multiple albumId, it separated by comma)
+
+example:
+
+* `[wppaef max-num=5]` show only 5 photos
+* `[wppaef max-num=5 album-id=2,3]` show only the last 5 photos of album id 2 and 3
+* `[wppaef max-num=5 album-id=2,3 text_url="Last 5 photo of album 2 and 3"]` show only the last 5 photos of album id 2 and 3 marked as "Last 5 photo of album 2 and 3" string link
+
 
 == Installation ==
 

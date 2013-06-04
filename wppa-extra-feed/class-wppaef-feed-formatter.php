@@ -29,7 +29,7 @@ if (!class_exists("Wppaef_Feed_Formatter")) :
         function __construct($feed_name){
             $this->site_url= get_site_url();
             $this->site_favicon=  get_stylesheet_directory_uri()."/favicon.png";
-            $this->feed_link=get_site_url() . '/?' . $feed_name;
+            $this->feed_link=get_site_url() . '/?feed=' . $feed_name;
         }
 
         public function add(Wppaef_Feed $feed){
@@ -44,6 +44,8 @@ if (!class_exists("Wppaef_Feed_Formatter")) :
         public function show()
         {
             header('Content-Type: text/xml; charset=' . get_option('blog_charset'), true);
+            header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+            header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
             echo  $this->parse();
         }
 
@@ -83,8 +85,8 @@ if (!class_exists("Wppaef_Feed_Formatter")) :
                     <title>' . $title . '</title>
                     <link rel="alternate" type="text/html" href="' . $feed->img_url . '"/>
                     <id>'.$feed->id.'</id>
-                    <published>'.date("d/m/y  H:i:s", $feed->timestamp).'</published>
-                    <updated>'.date("d/m/y  H:i:s",$feed->timestamp).'</updated>
+                    <published>'.self::formatDate(trim($feed->timestamp)).'</published>
+                    <updated>'.self::formatDate(trim($feed->timestamp)).'</updated>
                     <content type="html">
                         ' . htmlentities($content) . '
                     </content>
@@ -115,12 +117,18 @@ if (!class_exists("Wppaef_Feed_Formatter")) :
                 <link rel="alternate" type="text/html" href="' . $this->site_url . '"/>
                 <icon>' . $this->site_favicon . '</icon>
                 <subtitle></subtitle>
-                <updated>' . date("d/m/y  H:i:s", time()) . '</updated>
+                <updated>' . self::formatDate(trim(time())) . '</updated>
                 <generator uri="' . $this->site_url . '">' . $this->site_url . '</generator>
                 '.$allEntry.'
             </feed>';
 
             return $outPage;
+        }
+
+
+
+        private static function formatDate($data_of_sql){
+             return date('Y-m-d\TH:i:sP',$data_of_sql);
         }
 
     }

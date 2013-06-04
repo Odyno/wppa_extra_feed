@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WPPA+ Extra Feed
  * Plugin URI: http://www.staniscia.net/wppa-extra-feed/
- * Description: Enable RSS  for topten foto
+ * Description: This plugin add the extra RSS feeds feature at plugin WP Photo Album Plus.
  * Version: 0.0.1
  * Author: Alessandro Staniscia
  * Author URI: http://www.staniscia.net/
@@ -14,7 +14,7 @@ define('WPPAEF_NAME',"WPPA+ Feeds");
 define('_WPPAEF_FILE_',__FILE__);
 define('WPPAEF_VERSION',"0.0.1");
 define('WPPAEF_PLUGIN_DIR', plugin_dir_path(__FILE__));
-define('WPPAEF_PLUGIN_URL', plugins_url( __FILE__));
+define('WPPAEF_PLUGIN_URL', plugin_dir_url( __FILE__));
 define('WPPAEF_HOME_SITE_URL', "http://www.staniscia.net/odynogooglegroups");
 
 
