@@ -15,7 +15,7 @@ define('_WPPAEF_FILE_',__FILE__);
 define('WPPAEF_VERSION',"0.0.1");
 define('WPPAEF_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('WPPAEF_PLUGIN_URL', plugin_dir_url( __FILE__));
-define('WPPAEF_HOME_SITE_URL', "http://www.staniscia.net/odynogooglegroups");
+define('WPPAEF_HOME_SITE_URL', "http://wordpress.org/plugins/wppa-extra-feeds/");
 
 
 

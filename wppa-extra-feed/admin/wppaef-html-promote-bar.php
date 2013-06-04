@@ -34,11 +34,10 @@
                             <div style="float: right; margin: -15px 0 10px 0"><a href="<?php echo WPPAEF_HOME_SITE_URL; ?>" target="_blank"><img src="<?php echo WPPAEF_PLUGIN_URL; ?>/img/feed-icon-28x28.png" border="0" alt="logo" /></a></div>
                             <ol>
                                 <li><a class="sm_button sm_autor" href="<?php echo WPPAEF_HOME_SITE_URL; ?>" target="_blank"><?php _e('Plugin Homepage', 'ast-ogg-lang') ?></a></li>
-                                <li><a class="sm_button "  href="<?php echo WPPAEF_HOME_SITE_URL; ?>" target="_blank"><?php _e('Live demo', 'ast-ogg-lang') ?></a>             </li>
-
-                                <li><a class="sm_button sm_code"  href="<?php echo WPPAEF_HOME_SITE_URL; ?>issues" target="_blank"><?php _e('Suggest a Feature', 'ast-ogg-lang') ?></a></li>
-                                <li><a class="sm_button sm_bug"   href="<?php echo WPPAEF_HOME_SITE_URL; ?>issues" target="_blank"><?php _e('Report a Bug', 'ast-ogg-lang') ?></a>          </li>
-                                <li><a class="sm_button sm_star"  href="<?php echo WPPAEF_HOME_SITE_URL; ?>" target="_blank"><?php _e('Rate the plugin on WordPress.org', 'ast-ogg-lang') ?></a> </li>
+                                <!-- <li><a class="sm_button "  href="<?php echo WPPAEF_HOME_SITE_URL; ?>" target="_blank"><?php _e('Live demo', 'ast-ogg-lang') ?></a>             </li> -->
+                                <li><a class="sm_button sm_code"  href="http://wordpress.org/support/plugin/wppa-extra-feeds" target="_blank"><?php _e('Suggest a Feature', 'ast-ogg-lang') ?></a></li>
+                                <li><a class="sm_button sm_bug"   href="http://wordpress.org/support/plugin/wppa-extra-feeds" target="_blank"><?php _e('Report a Bug', 'ast-ogg-lang') ?></a>          </li>
+                                <li><a class="sm_button sm_star"  href="http://wordpress.org/support/view/plugin-reviews/wppa-extra-feeds" target="_blank"><?php _e('Rate the plugin on WordPress.org', 'ast-ogg-lang') ?></a> </li>
                             </ol>
                         </div>
                     </div>
