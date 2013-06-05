@@ -84,7 +84,7 @@ if (!class_exists("Wppaef_Feed_Formatter")) :
                 '<entry>
                     <title>' . $title . '</title>
                     <link rel="alternate" type="text/html" href="' . $feed->img_url . '"/>
-                    <id>'.$feed->id.'</id>
+                    <id>'.$feed->img_src.'</id>
                     <published>'.self::formatDate(trim($feed->timestamp)).'</published>
                     <updated>'.self::formatDate(trim($feed->timestamp)).'</updated>
                     <content type="html">
@@ -93,8 +93,7 @@ if (!class_exists("Wppaef_Feed_Formatter")) :
                     <author>
                         <name>'. $feed->owner . '</name>
                         <uri>' . $feed->owner_url . '</uri>
-                    </author>
-                    <link rel="enclosure" type="image/jpeg" href="' . $feed->img_src . '"/>
+                    </author><link rel="enclosure" type="image/jpeg" href="' . $feed->img_src . '"/>
                 </entry>';
 
             return $outPage;
@@ -111,7 +110,7 @@ if (!class_exists("Wppaef_Feed_Formatter")) :
             $outPage =
             '<?xml version = "1.0" encoding = "utf-8" standalone = "yes"?>
             <feed xmlns="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
-                <id>'.time().'</id>
+                <id>'.$this->feed_link.'</id>
                 <title>Uploads from everyone</title>
                 <link rel="self" href="' . $this->feed_link . '"/>
                 <link rel="alternate" type="text/html" href="' . $this->site_url . '"/>

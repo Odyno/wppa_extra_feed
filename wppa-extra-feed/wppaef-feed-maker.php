@@ -132,7 +132,7 @@ function wppaef_get_all_last_photo($max = 10, $album = null){
                         $feed->prefered_height = $height;
                         $feed->img_alternative_text = esc_attr(wppa_qtrans($image['name']));
                     } else { // Is an onclick unit
-                        $feed->img_url = "";
+                        $feed->img_url = $imgurl;
                         $feed->img_url_taget = "";
                         $feed->img_title = esc_attr(stripslashes($link['title']));
                         $feed->img_src = $imgurl;
@@ -141,7 +141,7 @@ function wppaef_get_all_last_photo($max = 10, $album = null){
                         $feed->img_alternative_text = esc_attr(wppa_qtrans($image['name']));
                     }
                 } else {
-                    $feed->img_url = "";
+                    $feed->img_url = $imgurl;
                     $feed->img_url_taget = "";
                     $feed->img_title = "";
                     $feed->img_src = $imgurl;
@@ -165,8 +165,8 @@ function wppaef_get_all_last_photo($max = 10, $album = null){
 
 function wppaef_get_user_profile_link($user_name){
     $user = get_user_by('login', $user_name);
-    if (function_exists('bp_core_get_userlink')) {
-        return bp_core_get_userlink($user->ID);
+    if (function_exists('bp_core_get_userurl')) {
+        return bp_core_get_userurl($user->ID);
     } else {
         $user_info = get_userdata($user->ID);
         return $user_info->user_login;
